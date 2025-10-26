@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Componentes',
+      title: 'App_Gino',
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),

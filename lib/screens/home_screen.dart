@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
     final options = AppRoutes.menuOptions;
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.indigoAccent, title: Text(title)),
+      appBar: AppBar(
+        backgroundColor: Colors.indigoAccent,
+        title: Text('Pantalla Principal'),
+      ),
       body: ListView.separated(
         itemCount: options.length,
         separatorBuilder: (_, __) => const Divider(),

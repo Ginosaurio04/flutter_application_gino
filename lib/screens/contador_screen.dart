@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Contador',
-      home: const Contador(title: 'Homescreen'),
+      home: const Contador(title: 'Contador'),
     );
   }
 }
@@ -36,6 +36,14 @@ class _MyHomePageState extends State<Contador> {
     });
   }
 
+  void _decrementCounter() {
+    if (_counter > 0) {
+      setState(() {
+        _counter--;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +64,23 @@ class _MyHomePageState extends State<Contador> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            key: const Key('increment_fab'),
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(height: 8),
+          FloatingActionButton(
+            key: const Key('decrement_fab'),
+            onPressed: _decrementCounter,
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
