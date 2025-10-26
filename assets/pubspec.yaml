@@ -1,0 +1,14 @@
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - assets/data/config.json
+    - assets/fonts/
+   
+  fonts:
+    - family: CustomFontName
+      fonts:
+        - asset: assets/fonts/CustomFont-Regular.ttf 
+        - asset: assets/fonts/CustomFont-Bold.ttf
+          weight: 700

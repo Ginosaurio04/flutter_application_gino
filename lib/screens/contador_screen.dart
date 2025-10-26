@@ -36,6 +36,24 @@ class _MyHomePageState extends State<Contador> {
     });
   }
 
+  void _resentCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
+  void _multiplyCounter() {
+    setState(() {
+      _counter *= 2;
+    });
+  }
+
+  void _divideCounter() {
+    setState(() {
+      _counter ~/= 2;
+    });
+  }
+
   void _decrementCounter() {
     if (_counter > 0) {
       setState(() {
@@ -64,21 +82,42 @@ class _MyHomePageState extends State<Contador> {
           ],
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
             key: const Key('increment_fab'),
             onPressed: _incrementCounter,
-            tooltip: 'Increment',
+            tooltip: 'Sumar',
             child: const Icon(Icons.add),
           ),
-          const SizedBox(height: 8),
+
           FloatingActionButton(
             key: const Key('decrement_fab'),
             onPressed: _decrementCounter,
-            tooltip: 'Decrement',
+            tooltip: 'Restar',
             child: const Icon(Icons.remove),
+          ),
+
+          FloatingActionButton(
+            key: const Key('reset_fab'),
+            onPressed: _resentCounter,
+            tooltip: 'Resetear',
+            child: const Icon(Icons.refresh),
+          ),
+
+          FloatingActionButton(
+            key: const Key('multiply_fab'),
+            onPressed: _multiplyCounter,
+            tooltip: 'Multiplicar',
+            child: const Icon(Icons.clear),
+          ),
+
+          FloatingActionButton(
+            key: const Key('divide_fab'),
+            onPressed: _divideCounter,
+            tooltip: 'Dividir',
+            child: const Icon(Icons.horizontal_rule),
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
