@@ -4,9 +4,7 @@ class Perfil extends StatelessWidget {
   const Perfil({super.key, required this.title});
 
   void _launchURL(String url) {
-    print(
-      'Intentando abrir URL: $url (Deberías usar la librería url_launcher)',
-    );
+    print('Intentando abrir URL: $url');
   }
 
   final String title;
@@ -60,6 +58,29 @@ class Perfil extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+
+          const Padding(
+            padding: EdgeInsets.only(left: 10, bottom: 10),
+            child: Text(
+              'Gustos y Pasatiempos',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+          ),
+
+          Card(
+            elevation: 4,
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  leading: const Icon(Icons.gamepad, color: Colors.redAccent),
+                  title: const Text('VideoJuegos Favoritos'),
+                  subtitle: const Text(
+                    'The Last of Us, God of war 3, Final Fantasy 7',
+                  ),
+                ),
+              ],
             ),
           ),
 
