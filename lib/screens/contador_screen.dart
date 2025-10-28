@@ -117,7 +117,7 @@ class _MyHomePageState extends State<Contador> {
             key: const Key('divide_fab'),
             onPressed: _divideCounter,
             tooltip: 'Dividir',
-            child: const Icon(Icons.horizontal_rule),
+            child: const Icon(Icons.percent),
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
