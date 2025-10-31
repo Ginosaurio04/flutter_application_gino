@@ -9,7 +9,7 @@ class AppRoutes {
   static final menuOptions = <MenuOptions>[
     MenuOptions(
       route: '/contador',
-      icon: Icons.home,
+      icon: Icons.calculate,
       title: 'Contador Screen',
       screen: const Contador(title: 'Contador'),
     ),
