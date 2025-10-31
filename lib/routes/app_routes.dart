@@ -16,7 +16,7 @@ class AppRoutes {
     MenuOptions(
       route: '/perfil',
       icon: Icons.person,
-      title: 'Perfil Screen',
+      title: 'Info Screen',
       screen: const Perfil(title: 'Perfil'),
     ),
   ];
