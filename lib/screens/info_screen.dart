@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Perfil extends StatelessWidget {
   const Perfil({super.key, required this.title});
 
-  void _launchURL(String url) {
-    print('Intentando abrir URL: $url');
+  Future<void> _launchURL(BuildContext context, String url) async {
+    final uri = Uri.parse(url);
+    try {
+      final launched = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!launched) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('No se pudo abrir la URL')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error al abrir la URL: $e')),
+      );
+    }
   }
 
   final String title;
@@ -109,7 +122,7 @@ class Perfil extends StatelessWidget {
                   title: const Text('GitHub'),
                   subtitle: const Text('Ginosaurio04'),
                   trailing: const Icon(Icons.open_in_new),
-                  onTap: () => _launchURL('https://github.com/Ginosaurio04'),
+                  onTap: () => _launchURL(context, 'https://github.com/Ginosaurio04'),
                 ),
               ],
             ),
