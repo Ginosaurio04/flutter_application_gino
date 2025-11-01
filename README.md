@@ -4,4 +4,4 @@ proyecto realizado por Ginosaurio
 
 posdata ignore un screen que se llame prueba, era yo inventando 
 
-intenté en mi info screen trabaje con un url pero no pude 
+hay un enlace que lleva directo ai git, solo para presentación 😎
